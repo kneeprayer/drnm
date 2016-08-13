@@ -5,9 +5,9 @@ This repository has been created to replace the **XAMPP** based development envi
 
 * Install Docker on your OS environment
   <https://docs.docker.com/engine/installation/>
-* cd **somewhere**
-* mkdir **somename** and cd **somename**
-* /bin/create-server.sh 
+* 'cd **somewhere**'
+* 'mkdir **somename** and cd **somename**'
+* '/bin/create-server.sh'
 
 ## How to use it
 * Start Docker Images
