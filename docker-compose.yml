@@ -1,0 +1,78 @@
+version: '2'
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.11.1-alpine
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx/conf:/etc/nginx/conf.d
+    ports:
+      - 80:80
+    links:
+      - php-fpm
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.10
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+  php-fpm:
+    container_name: php-fpm
+    build:
+      context: ./php-fpm
+      dockerfile: Dockerfile
+    image: php:7.0.9-fpm-alpine
+    volumes:
+      - ./src:/var/www/html
+    # ports:
+    #   - 9000:9000
+    restart: always
+    links:
+      - mysql
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.20
+  mysql:
+    container_name: mysql
+    image: mysql:5.7.14
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: zaq12wsx
+      MYSQL_DATABASE: phpkiso
+      MYSQL_USER: phpadmin
+      MYSQL_PASSWORD: zaq12wsx
+      # MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf/:/etc/mysql/conf.d
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.30
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8080:80
+    links:
+      - mysql:db
+    environment:
+     - PMA_ARBITRARY=1
+    restart: always
+    volumes:
+     - /sessions
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.40
+
+networks:
+  app_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.238.0/24
+        gateway: 172.16.238.1
