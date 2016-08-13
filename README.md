@@ -5,20 +5,20 @@ This repository has been created to replace the **XAMPP** based development envi
 
 1. Install Docker on your OS environment
   <https://docs.docker.com/engine/installation/>
-2. 'cd **somewhere**'
-3. 'mkdir **somename** and cd **somename**'
-4. 'bin/create-server.sh'
+2. `cd **somewhere**`
+3. `mkdir **somename**` and `cd **somename**`
+4. `bin/create-server.sh`
 
 ## How to use it
 * Start Docker Images  
-  '''bin/start-server.sh  
+  ```bin/start-server.sh  
 * Stop Docker Images  
-  '''bin/stop-server.sh  
+  ```bin/stop-server.sh  
 * Make Docker Images  
-  '''bin/create-server.sh  
+  ```bin/create-server.sh  
 * Delete Docker Images  
-  '''bin/delete-server.sh  
-  * If you want to delete MySQL database file also, you should remove 'mysql/data/'  
+  ```bin/delete-server.sh  
+  * If you want to delete MySQL database file also, you should remove data directory to use `rm -rf mysql/data/`  
 
 ## Setting up a your Development Environment 
 
