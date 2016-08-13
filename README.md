@@ -5,9 +5,10 @@ This repository has been created to replace the **XAMPP** based development envi
 
 1. Install Docker on your OS environment
   <https://docs.docker.com/engine/installation/>
-2. `cd **somewhere**`
-3. `mkdir **somename**` and `cd **somename**`
-4. `bin/create-server.sh`
+2. `cd `**somewhere**
+3. `mkdir `**somename** and `cd `**somename**
+4. `git clone https://github.com/kneeprayer/DMP.git`
+5. `bin/create-server.sh`
 
 ## How to use it
 * Start Docker Images  
