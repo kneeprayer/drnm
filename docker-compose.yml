@@ -2,14 +2,14 @@ version: '2'
 services:
   nginx:
     container_name: nginx
-    image: nginx:1.11.1-alpine
+    image: nginx:alpine
     volumes:
       - ./nginx/html:/var/www/html
       - ./nginx/conf:/etc/nginx/conf.d
     ports:
       - 80:80
     links:
-      - rails
+      - myrails
     networks:
       app_net:
         ipv4_address: 172.16.238.10
@@ -34,7 +34,7 @@ services:
         ipv4_address: 172.16.238.20
   mysql:
     container_name: mysql
-    image: mysql:5.7.14
+    image: mysql:5.7
     ports:
       - "3306:3306"
     environment:
