@@ -1,5 +1,5 @@
 ## Synopsis
-This repository has been created to replace the **XAMPP** based development environment to **Docker** based.
+This repository has been created for **Docker** based Ruby on Rails development environment.
 
 ## Installation
 
@@ -7,7 +7,7 @@ This repository has been created to replace the **XAMPP** based development envi
   <https://docs.docker.com/engine/installation/>
 2. `cd `**somewhere**
 3. `mkdir `**somename** and `cd `**somename**
-4. `git clone https://github.com/kneeprayer/DMP.git`
+4. `git clone https://github.com/kneeprayer/drnm.git`
 5. `bin/create-server.sh`
 
 ## How to use it
@@ -23,7 +23,7 @@ If you want to change app or db version, you should fix **docker-compose.yml** f
   image: mysql:5.7.14  ->  image: mysql:5.6  
   
 You can check docker version on the Docker Hub.  
-  php : <https://hub.docker.com/_/php/>  
+  rails : <https://hub.docker.com/_/ruby/>  
   Nginx : <https://hub.docker.com/_/nginx/>  
   Mysql : <https://hub.docker.com/_/mysql/>  
   phpmyadmin : <https://hub.docker.com/r/phpmyadmin/phpmyadmin/>  
